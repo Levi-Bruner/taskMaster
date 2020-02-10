@@ -15,7 +15,7 @@ function _loadState() {
     _state = data;
   }
 }
-_loadState();
+// _loadState();
 
 class Store {
   /**

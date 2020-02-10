@@ -1,0 +1,15 @@
+/* * {
+  border: solid black 1px;
+} */
+
+.title {
+  justify-content: center;
+}
+
+.maker-row {
+  justify-content: space-evenly;
+}
+
+.list-row{
+  justify-content: center;
+}
