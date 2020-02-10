@@ -9,17 +9,17 @@ export default class List {
     // the data coming in is my pojo from controller
     //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
     this.id = data.id || generateId();
-    this.name = data.listName
+    this.listName = data.listName
   }
   get Template() {
     return `
     <div class="col-4 list">
-      <h3>${this.name} <button onclick="app.listController.deleteList(${this.id})" title="Delete List"
+      <h3>${this.listName} <button onclick="app.listController.deleteList('${this.id}')" title="Delete List"
         class="btn btn-danger">X</button></h3>
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Add a task">
           <div class="input-group-append">
-            <button type="submit" onsubmit="app.listController.addListItem(event)" title="Create task"
+            <button type="submit" onsubmit="app.listController.addListItem('${this.id}')" title="Create task"
               class="btn btn-success"><i class="fa fa-check-circle"></i></button>
             <button title="Delete task" class="btn btn-danger">X</button>
             <div class="form-check">

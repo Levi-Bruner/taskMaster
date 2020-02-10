@@ -1,5 +1,6 @@
 import List from "../Models/List.js";
-import store from "../store.js"
+import store from "../store.js";
+import listItem from "../Models/ListItem.js"
 
 //Public
 class ListService {
@@ -16,8 +17,14 @@ class ListService {
     console.log(store.State.lists)
   }
 
+  addListItem(newListItem, listId) {
+    newListItem = new listItem(newListItem)
+    let lists = store.State.lists.find(list => listId === listId)
+    store.State.listItem.push(newListItem)
+    store.saveState
+  }
+
   deleteList(id) {
-    debugger
     let listId = store.State.lists.filter(List => List.id !== id)
     store.State.lists = listId
     store.saveState()

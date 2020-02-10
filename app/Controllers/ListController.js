@@ -21,18 +21,23 @@ export default class ListController {
   }
   addList(event) {
     event.preventDefault();
-    let formData = event.target.listName.value
+    let listName = event.target.listName.value
     // this is my pojo
     let newList = {
-      listName: formData
+      listName: listName
     }
     ListService.addList(newList)
     _drawLists();
   };
   deleteList(id) {
-    ListService.deleteList(id)
+    if (confirm("Are you sure you want to delete?")) {
+      ListService.deleteList(id)
+      _drawLists();
+    }
+  }
+  addListItem(event) {
+    ListService.addListItem()
     _drawLists();
   }
-
   //TODO: Your app will need the ability to create, and delete both lists and listItems
 }
