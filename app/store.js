@@ -4,8 +4,8 @@ import listItem from "./Models/ListItem.js"
 let _state = {
   /** @type {List[]} */
   lists: [],
-  /** @type {listItem[]} */
-  listItem: []
+  // /** @type {listItem[]} */
+  // listItem: []
 };
 
 //NOTE You should not need to change the code from this point down

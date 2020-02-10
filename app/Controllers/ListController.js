@@ -1,5 +1,6 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js"
+import listItem from "../Models/ListItem.js";
 
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
@@ -35,8 +36,16 @@ export default class ListController {
       _drawLists();
     }
   }
-  addListItem(event) {
-    ListService.addListItem()
+
+  //FIXME this needs the ListId
+  addListItem(event, id) {
+    event.preventDefault();
+    let formData = event.target
+    let newListItem = {
+      listItemName: formData.listItemName.value
+    }
+    console.log(newListItem)
+    ListService.addListItem(newListItem, id);
     _drawLists();
   }
   //TODO: Your app will need the ability to create, and delete both lists and listItems

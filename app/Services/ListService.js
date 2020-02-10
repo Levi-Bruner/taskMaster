@@ -19,9 +19,9 @@ class ListService {
 
   addListItem(newListItem, listId) {
     newListItem = new listItem(newListItem)
-    let lists = store.State.lists.find(list => listId === listId)
-    store.State.listItem.push(newListItem)
-    store.saveState
+    let list = store.State.lists.find(list => list.id === listId)
+    list.listItem.push(newListItem)
+    store.saveState()
   }
 
   deleteList(id) {
