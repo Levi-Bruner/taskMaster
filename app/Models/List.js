@@ -20,6 +20,7 @@ export default class List {
     let template = ""
     this.listItem.forEach(item => {
       template += item.listItemTemplate
+      template += `<button onclick="app.listController.deleteListItem('${this.id}', '${item.id}')" title="Delete task" class="btn btn-danger">X</button>`
     })
     return template
   }

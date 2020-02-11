@@ -1,4 +1,5 @@
 import { generateId } from "../utils.js"
+import List from "../Models/List.js"
 
 export default class listItem {
   constructor(data) {
@@ -9,7 +10,7 @@ export default class listItem {
   get listItemTemplate() {
     return /*html*/`
     <div>
-      <span>${this.listItemName}</span> <button title="Delete task" class="btn btn-danger">X</button>
+      <span>${this.listItemName}</span>
     </div>
     `
   }

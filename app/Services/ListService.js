@@ -30,6 +30,13 @@ class ListService {
     store.saveState()
   }
 
+  deleteListItem(listId, itemId) {
+    let listsId = store.State.lists.find(List => List.id == listId)
+    let itemsId = listsId.listItem.findIndex(item => item.id == itemId)
+    listsId.listItem.splice(itemsId, 1)
+    store.saveState()
+  }
+
 }
 
 const SERVICE = new ListService();

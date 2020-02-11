@@ -31,13 +31,17 @@ export default class ListController {
     _drawLists();
   };
   deleteList(id) {
-    if (confirm("Are you sure you want to delete?")) {
+    if (confirm("Are you sure you want to delete this list?")) {
       ListService.deleteList(id)
       _drawLists();
     }
   }
-
-  //FIXME this needs the ListId
+  deleteListItem(listId, itemId) {
+    if (confirm("Are you sure you want to delete this task?")) {
+      ListService.deleteListItem(listId, itemId)
+      _drawLists()
+    }
+  }
   addListItem(event, id) {
     event.preventDefault();
     let formData = event.target
